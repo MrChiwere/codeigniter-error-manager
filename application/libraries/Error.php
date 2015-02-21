@@ -13,8 +13,7 @@ class Error
 		$this->ci = &get_instance();
 		
 		//	Name of array variable you use in your controllers to store data that will be sent to the output class
-		//$this->data = $this->ci->config->item('error_data_variable');
-		if(!$this->data) $this->data = &$this->ci->data;		// set your value here if not defined in config file
+		if(!$this->data) $this->data = & $this->ci->data;	// replace $this->ci->data with name of your data array variable used in controllers
 		
 		//	Name of variable that will be used to store the errors array. This will be used as the key in the above named array variable and in session data
 		$this->session = $this->ci->config->item('error_session_variable');
