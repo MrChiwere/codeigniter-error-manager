@@ -26,15 +26,15 @@ EXAMPLE 1. To set a new error message, call the helper function sem().
 	1a. suppose an error has occured e.g during login, username/password are incorrect, set error message as follows:
 		method A: sem('Login Failed, please check your username/password');
 		method B: sem('Login Failed, please check your username/password', TRUE);
-		method C: sem( array( 'error'=>TRUE, 'error_msg'=>'Login Failed, please check your username/password' ) );
+		method C: sem( [ 'error'=>TRUE, 'error_msg'=>'Login Failed, please check your username/password' ] );
 		
 	1b. suppose an operation was successful, e.g account created successfully. Set success message as follows:
 		method A: sem('Thank you for registering. You account has been created successfully', FALSE);
-		method B: sem( 'error'=>FALSE, 'error_msg'=>'Thank you for registering. You account has been created successfully' );
+		method B: sem( ['error'=>FALSE, 'error_msg'=>'Thank you for registering. You account has been created successfully'] );
 	
 	1c. suppose you also want the error message to be written to the log file. Note that you can send the log flag as either 'ERROR' or 'DEBUG'
 		method A: sem('Login Failed, please check your username/password', TRUE, 'ERROR');
-		method B: sem( array( 'error'=>TRUE, 'error_msg'=>'Login Failed, please check your username/password' ), TRUE, 'ERROR' );
+		method B: sem( [ 'error'=>TRUE, 'error_msg'=>'Login Failed, please check your username/password' ], TRUE, 'ERROR' );
 
 
 EXAMPLE 2. To get array of error messages, call the helper function gem().
